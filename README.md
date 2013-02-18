@@ -1,4 +1,4 @@
 foxter
 ======
 
-comparte tu contenido con el mundo
+comparte tu contenido gratis
