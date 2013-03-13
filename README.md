@@ -26,7 +26,7 @@ Modulos que necesitas
 """
 
 Foxter.co comparte tu contenido gratis
-Copyright (C) 2013 Samuel Bonilla <rochacbruno@gmail.com>
+Copyright (C) 2013 Samuel Bonilla <pythonnerso@gmail.com>
 
 License: LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
 
