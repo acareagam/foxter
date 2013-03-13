@@ -2,7 +2,7 @@ www.foxter.co
 
 - Foxter es una red social basada en [movuca](github.com/rochacbruno/Movuca) que esta centrada en la informacion
 - [pagina](http://foxter.co)
-- esta desarrollada web2py Python web framework
+- esta desarrollada en web2py Python web framework
 
 Modulos que necesitas
 
@@ -26,7 +26,7 @@ Modulos que necesitas
 """
 
 Foxter.co comparte tu contenido gratis
-Copyright (C) 2013 Samuel Bonilla <pythonnerso@gmail.com>
+Copyright (C) 2013 Samuel Bonilla <pythonners@gmail.com>
 
 License: LGPLv3 (http://www.gnu.org/licenses/lgpl.html)
 
