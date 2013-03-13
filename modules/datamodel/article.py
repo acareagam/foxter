@@ -180,7 +180,7 @@ class Category(BaseModel):
             Field("description", "text"),
             Field("picture", "upload"),
             Field("thumbnail", "upload"),
-            Field("parent_id", "reference article_category", , default=44),
+            Field("parent_id", "reference article_category", default=44),
             Field("content_type", "reference content_type"),
         ]
 
