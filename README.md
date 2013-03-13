@@ -1,6 +1,6 @@
 www.foxter.co
 
-- Foxter es una red social basada en movuca(github.com/rochacbruno/Movuca) que esta centrada en la informacion
+- Foxter es una red social basada en [movuca](github.com/rochacbruno/Movuca) que esta centrada en la informacion
 - [pagina](http://foxter.co)
 - esta desarrollada web2py Python web framework
 
