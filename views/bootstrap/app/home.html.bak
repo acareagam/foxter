@@ -1,0 +1,131 @@
+{{response.files.append(URL('static','bootstrap/js/home_index.js'))}}
+{{extend "bootstrap/app/layout.html"}}
+
+
+{{block header}}
+ <div class="row-fluid hero-unit header" style="padding:0px;">
+    <div style="padding:15px;">
+    {{include "bootstrap/app/featured_slider.html"}}
+    {{#include "bootstrap/app/featured_members.html"}}
+    </div>
+</div>
+{{end}}
+
+
+
+
+<!-- content tabs -->
+  <h4 class="bottom-line">
+      <i class="icon-list-alt"></i>
+      {{=T("Content")}}
+  </h4>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="{{=CURL('article','list.load')}}">{{=T("All")}}</a></li>
+      {{for i, content_type in enumerate(content_types):}}
+          {{if i <= 1:}}
+          <li><a data-toggle="tab" href="{{=CURL('article','list.load', vars={'content_type_id':content_type.id})}}">{{=T(content_type.title)}}</a></li>
+          {{pass}}
+      {{pass}}
+      {{if len(content_types) > 2:}}
+              <!-- <li><a data-toggle="tab" href="{{=CURL('article','list.load', vars={'content_type_id':content_type.id})}}">{{=T(content_type.title)}}</a></li> -->
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      {{=T("More")}}
+                      <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    {{for i, content_type in enumerate(content_types):}}
+                         {{if i > 1:}}
+                             <li><a data-toggle="tab" href="{{=CURL('article','list.load', vars={'content_type_id':content_type.id})}}">{{=T(content_type.title)}}</a></li>
+                         {{pass}}
+                    {{pass}}
+ 
+                  </ul>
+              </li>
+      {{pass}}
+    </ul> 
+    <script>
+    $(function () {
+      $('.tabs a:last').tab('show')
+
+      $('a[data-toggle="tab"]').on('show', function (e) {
+         e.target; // activated tab
+         e.relatedTarget; // previous tab
+         url = $(e.target).attr("href");
+         web2py_ajax_page("GET", url, "", "content-placeholder")
+      })
+    })
+    </script>
+    <style>
+    #content-placeholder{
+      margin-top: -15px;
+    }
+    </style>
+    {{=LOAD('article','list.load',vars=dict(limitby='0,10'), ajax=True, target="content-placeholder")}}
+
+<!-- /content tabs -->
+
+ {{block left_sidebar}}
+     {{super}}
+     <div class="well featured-members" style="margin-top:20px;">
+     {{include "menu/app/featured_members.html"}}
+     <a class="btn pull-right" href="{{=CURL('person','search', vars={'q':'@'})}}">{{=T("View more")}}</a>
+     </div>
+      
+           <div class="anuncios" style="padding:0px;">
+    <div style="padding:15px;">
+      <script type="text/javascript"><
+google_ad_client = "ca-pub-6853411854073699";
+/* foxter */
+google_ad_slot = "8494832165";
+google_ad_width = 200;
+google_ad_height = 200;
+//>
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+    
+    </div>
+</div>
+      
+     
+ {{end}}
+
+{{block right_sidebar}}
+   <div id="accordion2" class="accordion">
+            <h5>CATEGORIAS</h5>
+            {{for item in categories:}}
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse{{=item['id']}}" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle" style="background:#FFF7DF;">
+                  {{=T(item['content_type'])}}s
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse{{=item['id']}}" style="height: 0px;">
+                <div class="accordion-inner">
+                    
+                  <ul class="nav nav-list">
+                    {{for category in item['categories']:}}
+                        <li><a href="{{=CURL('article', 'list', vars=dict(category=category.name, content_type_id=item['id']))}}"><i class="i"></i> {{=T(category.name)}}</a></li>
+                    {{pass}}
+                     <li><a href="{{=CURL('article', 'list', vars=dict(content_type_id=item['id']))}}"><i class="i"></i> {{=T("View all")}}</a></li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+            {{pass}}
+
+
+          </div>
+          <h4 class="bottom-line">
+      <i class="icon-volume-up"></i>
+      {{=T("Public Feed")}}
+  </h4>
+    {{=LOAD('person','publictimeline.load',args='sidebar' ,vars=dict(limitby='0,5'), ajax=True)}}
+
+    <br/>
+     
+
+{{end}}

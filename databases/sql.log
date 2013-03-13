@@ -1,0 +1,100 @@
+timestamp: 2013-03-13T16:38:08.407626
+CREATE TABLE article_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    license TEXT NOT NULL,
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:08.859833
+CREATE TABLE auth_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    formstyle CHAR(512) NOT NULL DEFAULT 'divs',
+    photo_source TEXT NOT NULL,
+    gender TEXT NOT NULL,
+    privacy TEXT NOT NULL,
+    use_facebook CHAR(1) NOT NULL DEFAULT 'T',
+    facebook TEXT NOT NULL,
+    use_google CHAR(1) NOT NULL DEFAULT 'T',
+    google TEXT NOT NULL,
+    use_recaptcha CHAR(1) NOT NULL DEFAULT 'T',
+    recaptcha TEXT NOT NULL,
+    use_mailhide CHAR(1) NOT NULL DEFAULT 'T',
+    mailhide TEXT NOT NULL,
+    registration_requires_verification CHAR(1) NOT NULL DEFAULT 'F',
+    registration_requires_approval CHAR(1) NOT NULL DEFAULT 'F',
+    registration_requires_invitation CHAR(1) NOT NULL DEFAULT 'F',
+    server CHAR(512) NOT NULL DEFAULT 'default',
+    sender CHAR(512) NOT NULL DEFAULT 'mail@domain.com',
+    login CHAR(512),
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.010939
+CREATE TABLE comment_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    system CHAR(512) NOT NULL DEFAULT 'internal',
+    anonymous CHAR(1) NOT NULL DEFAULT 'F',
+    disqus_shortname CHAR(512) NOT NULL DEFAULT 'foxter',
+    disqus_developer INTEGER NOT NULL DEFAULT 1,
+    intense_acct CHAR(512),
+    facebook_appid CHAR(512),
+    facebook_numposts INTEGER NOT NULL DEFAULT 10,
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.160506
+CREATE TABLE crud_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    formstyle CHAR(512) NOT NULL DEFAULT 'divs',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.312118
+CREATE TABLE db_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    uri CHAR(512) NOT NULL DEFAULT 'sqlite://foxter.sqlite',
+    migrate CHAR(1) NOT NULL DEFAULT 'T',
+    migrate_enabled CHAR(1) NOT NULL DEFAULT 'T',
+    pool_size INTEGER NOT NULL DEFAULT 10,
+    gaeuri CHAR(512) NOT NULL DEFAULT 'google:datastore',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.480601
+CREATE TABLE mail_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    server CHAR(512) NOT NULL DEFAULT 'smtp.gmail.com:587',
+    sender CHAR(512) NOT NULL DEFAULT 'your-mail@your-domain.com',
+    login CHAR(512),
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.623827
+CREATE TABLE meta_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512) NOT NULL DEFAULT 'Foxter',
+    subtitle CHAR(512) NOT NULL DEFAULT 'Foxter news',
+    author CHAR(512) NOT NULL DEFAULT 'Samuel Bonilla R.',
+    keywords CHAR(512) NOT NULL DEFAULT 'web2py, python, cms, social network, CMS',
+    description CHAR(512) NOT NULL DEFAULT 'Free Social CMS Engine built with web2py and Python by blouweb.com',
+    generator CHAR(512) NOT NULL DEFAULT 'web2py, Python, Foxter',
+    copyright CHAR(512) NOT NULL DEFAULT 'Free',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.766086
+CREATE TABLE notification_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    event TEXT NOT NULL,
+    way TEXT NOT NULL,
+    worker CHAR(512),
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-03-13T16:38:09.900242
+CREATE TABLE theme_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512) NOT NULL DEFAULT 'bootstrap',
+    setuptime TIMESTAMP NOT NULL
+);
+success!

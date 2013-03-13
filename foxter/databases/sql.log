@@ -1,0 +1,633 @@
+timestamp: 2013-01-03T20:14:47.420000
+CREATE TABLE article_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    license TEXT NOT NULL,
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:47.554000
+CREATE TABLE auth_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    formstyle CHAR(512) NOT NULL DEFAULT 'divs',
+    photo_source TEXT NOT NULL,
+    gender TEXT NOT NULL,
+    privacy TEXT NOT NULL,
+    use_facebook CHAR(1) NOT NULL DEFAULT 'T',
+    facebook TEXT NOT NULL,
+    use_google CHAR(1) NOT NULL DEFAULT 'T',
+    google TEXT NOT NULL,
+    use_recaptcha CHAR(1) NOT NULL DEFAULT 'T',
+    recaptcha TEXT NOT NULL,
+    use_mailhide CHAR(1) NOT NULL DEFAULT 'T',
+    mailhide TEXT NOT NULL,
+    registration_requires_verification CHAR(1) NOT NULL DEFAULT 'F',
+    registration_requires_approval CHAR(1) NOT NULL DEFAULT 'F',
+    registration_requires_invitation CHAR(1) NOT NULL DEFAULT 'F',
+    server CHAR(512) NOT NULL DEFAULT 'default',
+    sender CHAR(512) NOT NULL DEFAULT 'mail@domain.com',
+    login CHAR(512),
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:47.705000
+CREATE TABLE comment_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    system CHAR(512) NOT NULL DEFAULT 'internal',
+    anonymous CHAR(1) NOT NULL DEFAULT 'F',
+    disqus_shortname CHAR(512) NOT NULL DEFAULT 'movuca',
+    disqus_developer INTEGER NOT NULL DEFAULT 1,
+    intense_acct CHAR(512) NOT NULL DEFAULT 'fe83a2e2af975dd1095a8e4e9ebe1902',
+    facebook_appid CHAR(512) NOT NULL DEFAULT '257838757587678',
+    facebook_numposts INTEGER NOT NULL DEFAULT 10,
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:47.792000
+CREATE TABLE crud_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    formstyle CHAR(512) NOT NULL DEFAULT 'divs',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:47.879000
+CREATE TABLE db_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    uri CHAR(512) NOT NULL DEFAULT 'sqlite://movuca.sqlite',
+    migrate CHAR(1) NOT NULL DEFAULT 'T',
+    migrate_enabled CHAR(1) NOT NULL DEFAULT 'T',
+    pool_size INTEGER NOT NULL DEFAULT 10,
+    gaeuri CHAR(512) NOT NULL DEFAULT 'google:datastore',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:48.026000
+CREATE TABLE mail_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    server CHAR(512) NOT NULL DEFAULT 'logging',
+    sender CHAR(512) NOT NULL DEFAULT 'mail@domain.com',
+    login CHAR(512),
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:48.113000
+CREATE TABLE meta_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512) NOT NULL DEFAULT 'Movuca',
+    subtitle CHAR(512) NOT NULL DEFAULT 'Free Social CMS Engine',
+    author CHAR(512) NOT NULL DEFAULT 'Bruno Cezar Rocha at blouweb.com',
+    keywords CHAR(512) NOT NULL DEFAULT 'web2py, python, cms, social network, CMS',
+    description CHAR(512) NOT NULL DEFAULT 'Free Social CMS Engine built with web2py and Python by blouweb.com',
+    generator CHAR(512) NOT NULL DEFAULT 'web2py, Python, Movuca CMS',
+    copyright CHAR(512) NOT NULL DEFAULT 'Free',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:48.231000
+CREATE TABLE notification_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    event TEXT NOT NULL,
+    way TEXT NOT NULL,
+    worker CHAR(512),
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-03T20:14:48.422000
+CREATE TABLE theme_options(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512) NOT NULL DEFAULT 'bootstrap',
+    setuptime TIMESTAMP NOT NULL
+);
+success!
+timestamp: 2013-01-27T16:39:44.512000
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512),
+    nickname CHAR(512) NOT NULL,
+    tagline CHAR(512),
+    twitter CHAR(512),
+    facebook CHAR(512),
+    website CHAR(512),
+    extra_links TEXT,
+    avatar CHAR(512),
+    thumbnail CHAR(512),
+    photo_source INTEGER,
+    about TEXT,
+    gender CHAR(512),
+    birthdate DATE,
+    privacy INTEGER NOT NULL DEFAULT 1,
+    facebookid CHAR(512),
+    googleid CHAR(512),
+    googlepicture CHAR(512),
+    registration_type INTEGER NOT NULL DEFAULT 1,
+    articles INTEGER NOT NULL DEFAULT 0,
+    draft_articles INTEGER NOT NULL DEFAULT 0,
+    messages INTEGER NOT NULL DEFAULT 0,
+    draft_messages INTEGER NOT NULL DEFAULT 0,
+    unread_messages INTEGER NOT NULL DEFAULT 0,
+    sent_messages INTEGER NOT NULL DEFAULT 0,
+    comments INTEGER NOT NULL DEFAULT 0,
+    rating_count INTEGER NOT NULL DEFAULT 0,
+    rating_total INTEGER NOT NULL DEFAULT 0,
+    rating_average INTEGER NOT NULL DEFAULT 0,
+    threads INTEGER NOT NULL DEFAULT 0,
+    responses INTEGER NOT NULL DEFAULT 0,
+    groups INTEGER NOT NULL DEFAULT 0,
+    contacts INTEGER NOT NULL DEFAULT 0,
+    isfollowing INTEGER NOT NULL DEFAULT 0,
+    followers INTEGER NOT NULL DEFAULT 0,
+    userpages INTEGER NOT NULL DEFAULT 0,
+    pictures INTEGER NOT NULL DEFAULT 0,
+    favorites INTEGER NOT NULL DEFAULT 0,
+    likes INTEGER NOT NULL DEFAULT 0,
+    dislikes INTEGER NOT NULL DEFAULT 0,
+    subscriptions INTEGER NOT NULL DEFAULT 0,
+    country CHAR(512),
+    city CHAR(512),
+    languages TEXT,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:44.656000
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2013-01-27T16:39:44.806000
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:44.972000
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2013-01-27T16:39:45.089000
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2013-01-27T16:39:45.188000
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2013-01-27T16:39:45.363000
+CREATE TABLE content_type(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512) NOT NULL,
+    description CHAR(512),
+    identifier CHAR(512) NOT NULL UNIQUE,
+    classname CHAR(512) NOT NULL,
+    tablename CHAR(512) NOT NULL,
+    viewname CHAR(512),
+    childs INTEGER NOT NULL DEFAULT 1,
+    access_control TEXT,
+    searchable CHAR(1),
+    listable CHAR(1),
+    preprocess TEXT,
+    postprocess TEXT,
+    acceptedprocess TEXT,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:45.597000
+CREATE TABLE article_category(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name CHAR(512),
+    description TEXT,
+    picture CHAR(512),
+    thumbnail CHAR(512),
+    parent_id INTEGER REFERENCES article_category (id) ON DELETE CASCADE,
+    content_type INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:45.910000
+CREATE TABLE article(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    author_nickname CHAR(512),
+    title CHAR(512),
+    description TEXT,
+    picture CHAR(512),
+    medium_thumbnail CHAR(512),
+    thumbnail CHAR(512),
+    draft CHAR(1),
+    category_id TEXT,
+    tags TEXT,
+    keywords CHAR(512),
+    content_type_id INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    content_type CHAR(512),
+    slug CHAR(512),
+    search_index TEXT,
+    publish_date TIMESTAMP,
+    publish_tz CHAR(512),
+    featured CHAR(1),
+    blocks TEXT,
+    text_language CHAR(512),
+    privacy INTEGER,
+    license CHAR(512),
+    likes INTEGER,
+    dislikes INTEGER,
+    views INTEGER,
+    responses INTEGER,
+    favorited INTEGER,
+    subscriptions INTEGER,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:46.022000
+CREATE TABLE ads(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    description TEXT,
+    picture CHAR(512),
+    thumbnail CHAR(512),
+    link CHAR(512),
+    place CHAR(512),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:46.165000
+CREATE TABLE internal_page(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512) UNIQUE,
+    description TEXT,
+    page_content TEXT,
+    picture CHAR(512),
+    thumbnail CHAR(512),
+    tags TEXT,
+    slug CHAR(512),
+    page_scope TEXT,
+    visibility CHAR(512),
+    text_language CHAR(512),
+    redirect_url CHAR(512),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:46.317000
+CREATE TABLE menu(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(512),
+    href CHAR(512),
+    parent INTEGER,
+    place CHAR(512),
+    show_order INTEGER,
+    visibility INTEGER,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:47.330000
+CREATE TABLE user_timeline(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    nickname CHAR(512),
+    event_type CHAR(512),
+    event_to CHAR(512),
+    event_reference INTEGER,
+    event_text TEXT,
+    event_image CHAR(512),
+    event_link CHAR(512),
+    event_image_to CHAR(512),
+    event_link_to CHAR(512),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:47.594000
+CREATE TABLE article_favoriters(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:47.812000
+CREATE TABLE article_subscribers(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:47.952000
+CREATE TABLE article_likers(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:48.077000
+CREATE TABLE article_dislikers(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:48.179000
+CREATE TABLE article_comments(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    nickname CHAR(512) NOT NULL,
+    parent_id INTEGER REFERENCES article_comments (id) ON DELETE CASCADE,
+    replies INTEGER NOT NULL DEFAULT 0,
+    comment_text TEXT NOT NULL,
+    commenttime TIMESTAMP,
+    answer CHAR(1),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:48.278000
+CREATE TABLE article_comment_votes(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    comment_id INTEGER REFERENCES article_comments (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    vote INTEGER NOT NULL DEFAULT 1,
+    unikey CHAR(512) NOT NULL UNIQUE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:48.391000
+CREATE TABLE notification_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    event_type CHAR(512) NOT NULL,
+    way TEXT NOT NULL,
+    unikey CHAR(512) NOT NULL UNIQUE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:48.481000
+CREATE TABLE notification(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    event_type CHAR(512) NOT NULL,
+    event_text CHAR(512),
+    event_link CHAR(512),
+    event_reference INTEGER,
+    event_image CHAR(512),
+    mail_sent CHAR(1),
+    is_read CHAR(1),
+    kwargs TEXT,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:48.623000
+CREATE TABLE email_template(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    template_key CHAR(512) NOT NULL UNIQUE,
+    plain_text TEXT NOT NULL DEFAULT '',
+    html_text TEXT NOT NULL DEFAULT '',
+    subject_text CHAR(512),
+    copy_to CHAR(512),
+    reply_to CHAR(512),
+    detect_links CHAR(1),
+    attachment_file CHAR(512),
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:49.197000
+CREATE TABLE user_contact(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    follower INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    followed INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:39:49.334000
+CREATE TABLE user_board(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    writer INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    board_text CHAR(512),
+    parent_id INTEGER,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:42:13.672000
+CREATE TABLE article_data(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    markup CHAR(512),
+    body TEXT NOT NULL,
+    credits TEXT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    type_id INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T16:42:13.938000
+CREATE TABLE plugin_ckeditor_upload(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title CHAR(255),
+    filename CHAR(255),
+    flength INTEGER,
+    mime_type CHAR(128),
+    upload CHAR(512),
+    user_id INTEGER,
+    created_on TIMESTAMP
+);
+success!
+timestamp: 2013-01-27T17:18:54.549000
+CREATE TABLE cookrecipe_data(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    prep_time CHAR(512) NOT NULL,
+    cook_time CHAR(512) NOT NULL,
+    difficulty CHAR(512) NOT NULL,
+    servings DOUBLE NOT NULL,
+    ingredients TEXT NOT NULL,
+    instructions TEXT NOT NULL,
+    credits TEXT,
+    video_source CHAR(512),
+    video_embed CHAR(512),
+    active_tab CHAR(512),
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    type_id INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T17:18:54.720000
+CREATE TABLE cookrecipe_book(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T17:18:54.924000
+CREATE TABLE coderecipe_data(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    code TEXT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    type_id INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T17:18:55.082000
+CREATE TABLE product_data(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    price DOUBLE NOT NULL DEFAULT 0.0,
+    manufacturer CHAR(512) NOT NULL,
+    in_stock CHAR(1) NOT NULL DEFAULT 'T',
+    quantity INTEGER,
+    info TEXT NOT NULL,
+    option_fields TEXT,
+    extra_fields TEXT,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    type_id INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T17:18:55.196000
+CREATE TABLE video_data(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    video_source CHAR(512) NOT NULL,
+    video_embed CHAR(512) NOT NULL,
+    video_width INTEGER,
+    video_height INTEGER,
+    article_id INTEGER REFERENCES article (id) ON DELETE CASCADE,
+    type_id INTEGER REFERENCES content_type (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!
+timestamp: 2013-01-27T17:32:35.514000
+CREATE TABLE report_content(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    content_type CHAR(512),
+    item_id INTEGER,
+    slug CHAR(512),
+    reason CHAR(512),
+    details TEXT,
+    is_active CHAR(1),
+    created_on TIMESTAMP,
+    created_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on TIMESTAMP,
+    modified_by INTEGER REFERENCES auth_user (id) ON DELETE CASCADE
+);
+success!

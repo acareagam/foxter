@@ -1,0 +1,671 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> format requires a mapping"
+p3
+sS'layer'
+p4
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/views/bootstrap/app/person/usertimeline.load'
+p5
+sS'code'
+p6
+S'def eventbox(event):\n    response.write(\'\\n<li class="timeline-item row well" style="padding-top:5px;margin:10px 0;" id="event_\', escape=False)\n    response.write(event.id)\n    response.write(\'">\\n\\t\', escape=False)\n    if session.auth and (session.auth.user.id in [event.created_by]):\n        response.write(\'\\n\\t<a class="close removeevent" data-url="\', escape=False)\n        response.write(URL(\'person\', \'removeevent\', args=event.id, extension=False))\n        response.write(\'">&times;</a>\\n    \', escape=False)\n        pass\n    response.write(\'\\n   <div class="row">\\n\\t<div class="span10 timeline-text" style="font-size:14px;line-height:14px;padding:0px;">\\n\\n        \', escape=False)\n    if event.event_link_to:\n        response.write(\'\\n            <a style="text-decoration:none;color:#000;" href="\', escape=False)\n        response.write(event_info[event.event_type][\'url_to\'])\n        response.write(\'/\', escape=False)\n        response.write(event.event_link_to)\n        response.write(\'">\\n\\t            \', escape=False)\n        response.write(event_info[event.event_type][\'title\'] % event)\n        response.write(\'\\n\\t        </a>\\n\\t    \', escape=False)\n    else:\n        response.write(\'\\n                \', escape=False)\n        response.write(event_info[event.event_type][\'title\'] % event)\n        response.write(\'\\n\\t    \', escape=False)\n        pass\n    response.write(\'\\n\\t    \\n\\t    <p  onclick="window.location=\\\'\', escape=False)\n    response.write(event_info[event.event_type][\'url_to\'])\n    response.write(\'/\', escape=False)\n    response.write(event.event_link_to)\n    response.write(\'\\\'">\\n\\t    \', escape=False)\n    if \'iconclass\' in event_info[event.event_type]:\n        response.write(\'\\n            <i class="\', escape=False)\n        response.write(event_info[event.event_type][\'iconclass\'])\n        response.write(\'"></i>\\n\\t    \', escape=False)\n        pass\n    response.write(\'\\n\\t    \', escape=False)\n    response.write(XML(event.event_text))\n    response.write(\'\\n\\t    </p>\\n\\t</div>\\n\\t\', escape=False)\n    if event.event_image_to:\n        response.write(\'\\n\\t<div class="span1 omega" style="margin-left:0;">\\n\\t    <a href="\', escape=False)\n        response.write(event_info[event.event_type][\'url_to\'])\n        response.write(\'/\', escape=False)\n        response.write(event.event_link_to)\n        response.write(\'" title="\', escape=False)\n        response.write(event.event_to)\n        response.write(\'"><img src="\', escape=False)\n        response.write(event.event_image_to)\n        response.write(\'" style="max-height:50px;"></a>\\n\\t</div>\\n\\t\', escape=False)\n        pass\n    response.write(\'\\n  </div>\\n  <div class="row">\\n\\t<div class="span5" style="text-align:left;font-size:14px;line-height:14px;padding:0px;"><i class="icon-time"></i>\', escape=False)\n    response.write(pdate(event.created_on))\n    response.write(\'</div>\\n<!-- \\t<div class="span6" style="text-align:right;font-size:14px;line-height:14px;padding:0px;">\\n\\t    <a><i class="icon-share-alt"></i>\', escape=False)\n    response.write(T(\'reply\'))\n    response.write(\'</a> | <a><i class="icon-retweet"></i>\', escape=False)\n    response.write(T(\'repost\'))\n    response.write(\'</a> | <a><i class="icon-edit"></i>\', escape=False)\n    response.write(T(\'edit\'))\n    response.write(\'</a> &nbsp;&nbsp;\\n\\t</div> -->\\n  </div>\\n</li>\\n\', escape=False)\n    return\nresponse.write(\'\\n\', escape=False)\nresponse.write(\'\\n\\n<script>\\n$(document).ready(function () {\\n  $(".removeevent").click(function() {\\n      url = $(this).attr(\\\'data-url\\\');\\n      if (confirm("Delete?")) {\\n        ajax(url,[],\\\':eval\\\');\\n        //jQuery($(this)).parent().hide();\\n        return false;\\n        }\\n  });\\n});\\n</script>\\n\\n<ul class="timeline-wrapper" style="list-style: none;margin-left:0px;">\\n \', escape=False)\nfor event in events:\n    response.write(\'\\n    \', escape=False)\n    eventbox(event)\n    response.write(\'\\n \', escape=False)\n    pass\nresponse.write(\'\\n</ul>\\n\', escape=False)\nif events:\n    response.write(\'\\n  <a href="\', escape=False)\n    response.write(CURL(\'person\',\'usertimeline\', extension=False, args=user.nickname or user.id,vars=dict()))\n    response.write(\'">\', escape=False)\n    response.write(T("View all activities"))\n    response.write(\'</a>\\n\', escape=False)\nelse:\n    response.write(\'\\n  \', escape=False)\n    response.write(T("No events on this timeline"))\n    response.write(\'\\n\', escape=False)\n    pass'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.TypeError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.TypeError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.TypeError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.TypeError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.TypeError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.TypeError object>'
+p23
+sS'__reduce__'
+p24
+S'<built-in method __reduce__ of exceptions.TypeError object>'
+p25
+sS'__str__'
+p26
+S"<method-wrapper '__str__' of exceptions.TypeError object>"
+p27
+sS'__format__'
+p28
+S'<built-in method __format__ of exceptions.TypeError object>'
+p29
+sS'__getattribute__'
+p30
+S"<method-wrapper '__getattribute__' of exceptions.TypeError object>"
+p31
+sS'__class__'
+p32
+S"<type 'exceptions.TypeError'>"
+p33
+sS'__unicode__'
+p34
+S'<built-in method __unicode__ of exceptions.TypeError object>'
+p35
+sS'__delattr__'
+p36
+S"<method-wrapper '__delattr__' of exceptions.TypeError object>"
+p37
+sS'__subclasshook__'
+p38
+S'<built-in method __subclasshook__ of type object>'
+p39
+sS'__repr__'
+p40
+S"<method-wrapper '__repr__' of exceptions.TypeError object>"
+p41
+sS'args'
+p42
+S"('format requires a mapping',)"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.TypeError object>'
+p47
+sS'__doc__'
+p48
+S"'Inappropriate argument type.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.TypeError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S'format requires a mapping'
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\x84e\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">ajax</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">application</td><td valign="top">:</td><td><div>foxter</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">args</td><td valign="top">:</td><td><div><table><tr><td><div>1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x8e30420&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cid</td><td valign="top">:</td><td><div>c309375034546</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">client</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">controller</td><td valign="top">:</td><td><div>person</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_admin</td><td valign="top">:</td><td><div>127.0.0.1-90453bb1-9172-4e19-bb55-22a008e1cd81<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_appli</td><td valign="top">:</td><td><div>127.0.0.1-43f0f72b-a4db-4562-8ec7-fb0a1116d146<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_foxter</td><td valign="top">:</td><td><div>127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_welcome</td><td valign="top">:</td><td><div>127.0.0.1-3908c525-5227-4ffa-a9b8-60983d7c49f1<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uechat_mode_10714</td><td valign="top">:</td><td><div>0<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">env</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/welcome/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/admin/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x897ba8c: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;python-HP-Pavilion-dm1-Notebook-PC&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;import_models&#x27;: False, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;admin&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;minthreads&#x27;: None, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept</td><td valign="top">:</td><td><div>*/*</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_charset</td><td valign="top">:</td><td><div>ISO-8859-1,utf-8;q=0.7,*;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_encoding</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_language</td><td valign="top">:</td><td><div>es-419,es;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_connection</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_cookie</td><td valign="top">:</td><td><div>session_id_appli=127.0.0.1-43f0f72b-a4db-4562-8ec7-fb0a1116d146; session_id_welcome=127.0.0.1-3908c525-5227-4ffa-a9b8-60983d7c49f1; session_id_admin=127.0.0.1-90453bb1-9172-4e19-bb55-22a008e1cd81; session_id_foxter=127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586; uechat_mode_10714=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_host</td><td valign="top">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_referer</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/foxter/person/show/pyner</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_user_agent</td><td valign="top">:</td><td><div>Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu Chromium/24.0.1312.56 Chrome/24.0.1312.56 Safari/537.17</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_web2py_component_element</td><td valign="top">:</td><td><div>c309375034546</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_web2py_component_location</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/foxter/person/show/pyner</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_x_requested_with</td><td valign="top">:</td><td><div>XMLHttpRequest</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path_info</td><td valign="top">:</td><td><div>/foxter/person/usertimeline.load/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">query_string</td><td valign="top">:</td><td><div>limitby=0%2C5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_addr</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_port</td><td valign="top">:</td><td><div>57426</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_method</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_uri</td><td valign="top">:</td><td><div>/foxter/person/usertimeline.load/1?limitby=0%2C5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">script_name</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_name</td><td valign="top">:</td><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_port</td><td valign="top">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_protocol</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_software</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_path</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div><table><tr><td><div>2</div></td></tr><tr><td><div>4</div></td></tr><tr><td><div>1</div></td></tr><tr><td><div>alpha.2</div></td></tr><tr><td><div>datetime.datetime(2013, 2, 15, 10, 50, 49)</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0xb74b50d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x893d29c&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_input</td><td valign="top">:</td><td><div>&lt;socket._fileobject object at 0xaff7122c&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_version</td><td valign="top">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">extension</td><td valign="top">:</td><td><div>load</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">folder</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">function</td><td valign="top">:</td><td><div>usertimeline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">get_vars</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">limitby</td><td valign="top">:</td><td><div>0,5</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">global_settings</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/welcome/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/admin/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x897ba8c: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;python-HP-Pavilion-dm1-Notebook-PC&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;import_models&#x27;: False, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;admin&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;minthreads&#x27;: None, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div><table><tr><td><div>2</div></td></tr><tr><td><div>4</div></td></tr><tr><td><div>1</div></td></tr><tr><td><div>alpha.2</div></td></tr><tr><td><div>datetime.datetime(2013, 2, 15, 10, 50, 49)</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_https</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_local</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_restful</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">now</td><td valign="top">:</td><td><div>datetime.datetime(2013, 2, 17, 10, 1, 55, 713341)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">post_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_args</td><td valign="top">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_extension</td><td valign="top">:</td><td><div>load</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">url</td><td valign="top">:</td><td><div>/foxter/person/usertimeline.load/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">utcnow</td><td valign="top">:</td><td><div>datetime.datetime(2013, 2, 17, 15, 1, 55, 713394)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uuid</td><td valign="top">:</td><td><div>foxter/127.0.0.1.2013-02-17.10-01-55.b40eb252-696c-4c7f-b80a-77ab320b04a3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">vars</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">limitby</td><td valign="top">:</td><td><div>0,5</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">environ</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT</td><td valign="top">:</td><td><div>*/*</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_CHARSET</td><td valign="top">:</td><td><div>ISO-8859-1,utf-8;q=0.7,*;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_ENCODING</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_LANGUAGE</td><td valign="top">:</td><td><div>es-419,es;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONNECTION</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_COOKIE</td><td valign="top">:</td><td><div>session_id_appli=127.0.0.1-43f0f72b-a4db-4562-8ec7-fb0a1116d146; session_id_welcome=127.0.0.1-3908c525-5227-4ffa-a9b8-60983d7c49f1; session_id_admin=127.0.0.1-90453bb1-9172-4e19-bb55-22a008e1cd81; session_id_foxter=127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586; uechat_mode_10714=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_HOST</td><td valign="top">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_REFERER</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/foxter/person/show/pyner</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_USER_AGENT</td><td valign="top">:</td><td><div>Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu Chromium/24.0.1312.56 Chrome/24.0.1312.56 Safari/537.17</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_WEB2PY_COMPONENT_ELEMENT</td><td valign="top">:</td><td><div>c309375034546</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_WEB2PY_COMPONENT_LOCATION</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/foxter/person/show/pyner</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_X_REQUESTED_WITH</td><td valign="top">:</td><td><div>XMLHttpRequest</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">PATH_INFO</td><td valign="top">:</td><td><div>/foxter/person/usertimeline.load/1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">QUERY_STRING</td><td valign="top">:</td><td><div>limitby=0%2C5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_ADDR</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_PORT</td><td valign="top">:</td><td><div>57426</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_METHOD</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_URI</td><td valign="top">:</td><td><div>/foxter/person/usertimeline.load/1?limitby=0%2C5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SCRIPT_NAME</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_NAME</td><td valign="top">:</td><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PORT</td><td valign="top">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PROTOCOL</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_SOFTWARE</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0xb74b50d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x893d29c&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.input</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0x8e30420&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.version</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr></table></div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, 'CENTER': <class 'gluon.html.CENTER'>, 'CLEANUP': <class 'gluon.validators.CLEANUP'>, 'CODE': <class 'gluon.html.CODE'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0xaff25ad0, file "/home.../bootstrap/app/person/usertimeline.load", line 1>'
+p69
+ssS'lnum'
+p70
+I212
+sS'lines'
+p71
+(dp72
+I207
+S'    try:'
+p73
+sI208
+S'        if isinstance(code, types.CodeType):'
+p74
+sI209
+S'            ccode = code'
+p75
+sI210
+S'        else:'
+p76
+sI211
+S'            ccode = compile2(code, layer)'
+p77
+sI212
+S'        exec ccode in environment'
+p78
+sI213
+S'    except HTTP:'
+p79
+sI214
+S'        raise'
+p80
+sI215
+S'    except RestrictedError:'
+p81
+sI216
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p82
+ssS'call'
+p83
+S'(code="def eventbox(event):\\n    response.write(\'\\\\n<li c...)\\n    response.write(\'\\\\n\', escape=False)\\n    pass", environment={\'A\': <class \'gluon.html.A\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, \'CENTER\': <class \'gluon.html.CENTER\'>, \'CLEANUP\': <class \'gluon.validators.CLEANUP\'>, \'CODE\': <class \'gluon.html.CODE\'>, ...}, layer=\'/home/python/P\\xc3\\xbablico/web2py/web2py-master/appli...xter/views/bootstrap/app/person/usertimeline.load\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/views/bootstrap/app/person/usertimeline.load'
+p88
+sg64
+(dp89
+sg70
+I62
+sg71
+(dp90
+I16
+S'<ul class="timeline-wrapper" style="list-style: none;margin-left:0px;">'
+p91
+sI17
+S' {{for event in events:}}'
+p92
+sI18
+S'    {{eventbox(event)}}'
+p93
+sI19
+S' {{pass}}'
+p94
+sI20
+S'</ul>'
+p95
+sI21
+S'{{if events:}}'
+p96
+sI22
+S'  <a href="{{=CURL(\'person\',\'usertimeline\', extension=False, args=user.nickname or user.id,vars=dict())}}">{{=T("View all activities")}}</a>'
+p97
+sI23
+S'{{else:}}'
+p98
+sI24
+S'  {{=T("No events on this timeline")}}'
+p99
+sI25
+S'{{pass}}'
+p100
+ssg83
+S'()'
+p101
+sg85
+S'<module>'
+p102
+sa(dp103
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/views/bootstrap/app/person/usertimeline.load'
+p104
+sg64
+(dp105
+S'global events'
+p106
+S'<Rows (5)>'
+p107
+sS'event'
+p108
+S"<Row {'event_link_to': '4/sdfdsa', 'event_text':... 'modified_by': 1, 'nickname': 'pyner', 'id': 5}>"
+p109
+ssg70
+I17
+sg71
+(dp110
+I12
+S'  });'
+p111
+sI13
+S'});'
+p112
+sI14
+S'</script>'
+p113
+sI15
+S''
+sI16
+S'<ul class="timeline-wrapper" style="list-style: none;margin-left:0px;">'
+p114
+sI17
+S' {{for event in events:}}'
+p115
+sI18
+S'    {{eventbox(event)}}'
+p116
+sI19
+S' {{pass}}'
+p117
+sI20
+S'</ul>'
+p118
+sI21
+S'{{if events:}}'
+p119
+ssg83
+S"(event=<Row {'event_link_to': '4/sdfdsa', 'event_text':... 'modified_by': 1, 'nickname': 'pyner', 'id': 5}>)"
+p120
+sg85
+S'eventbox'
+p121
+sa(dp122
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/globals.py'
+p123
+sg64
+(dp124
+S'self.body.write'
+p125
+S'<built-in method write of cStringIO.StringO object>'
+p126
+sS'self.body'
+p127
+S'<cStringIO.StringO object>'
+p128
+sS'self'
+p129
+S"<Storage {'body': <cStringIO.StringO object at 0...view': 'bootstrap/app/person/usertimeline.load'}>"
+p130
+sS'global xmlescape'
+p131
+S'<function xmlescape>'
+p132
+sS'data'
+p133
+S"<lazyT ' added a new %(event_to)s'>"
+p134
+ssg70
+I202
+sg71
+(dp135
+I197
+S''
+sI198
+S'    def write(self, data, escape=True):'
+p136
+sI199
+S'        if not escape:'
+p137
+sI200
+S'            self.body.write(str(data))'
+p138
+sI201
+S'        else:'
+p139
+sI202
+S'            self.body.write(xmlescape(data))'
+p140
+sI203
+S''
+sI204
+S'    def render(self, *a, **b):'
+p141
+sI205
+S'        from compileapp import run_view_in'
+p142
+sI206
+S'        if len(a) > 2:'
+p143
+ssg83
+S"(self=<Storage {'body': <cStringIO.StringO object at 0...view': 'bootstrap/app/person/usertimeline.load'}>, data=<lazyT ' added a new %(event_to)s'>, escape=True)"
+p144
+sg85
+S'write'
+p145
+sa(dp146
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/html.py'
+p147
+sg64
+(dp148
+S'data'
+p149
+S"<lazyT ' added a new %(event_to)s'>"
+p150
+sS'data.xml'
+p151
+S"<bound method lazyT.xml of <lazyT ' added a new %(event_to)s'>>"
+p152
+ssg70
+I120
+sg71
+(dp153
+I115
+S'    :param quote: optional (default False)'
+p154
+sI116
+S'    """'
+p155
+sI117
+S''
+sI118
+S'    # first try the xml function'
+p156
+sI119
+S"    if hasattr(data, 'xml') and callable(data.xml):"
+p157
+sI120
+S'        return data.xml()'
+p158
+sI121
+S''
+sI122
+S'    # otherwise, make it a string'
+p159
+sI123
+S'    if not isinstance(data, (str, unicode)):'
+p160
+sI124
+S'        data = str(data)'
+p161
+ssg83
+S"(data=<lazyT ' added a new %(event_to)s'>, quote=True)"
+p162
+sg85
+S'xmlescape'
+p163
+sa(dp164
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py'
+p165
+sg64
+(dp166
+S'builtinstr'
+p167
+S"<type 'str'>"
+p168
+sS'self'
+p169
+S"<lazyT ' added a new %(event_to)s'>"
+p170
+sS'global escape'
+p171
+S'<function escape>'
+p172
+sS'self.M'
+p173
+S'False'
+p174
+ssg70
+I409
+sg71
+(dp175
+I404
+S''
+sI405
+S'    def __len__(self):'
+p176
+sI406
+S'        return len(str(self))'
+p177
+sI407
+S''
+sI408
+S'    def xml(self):'
+p178
+sI409
+S'        return str(self) if self.M else escape(str(self))'
+p179
+sI410
+S''
+sI411
+S'    def encode(self, *a, **b):'
+p180
+sI412
+S'        return str(self).encode(*a, **b)'
+p181
+sI413
+S''
+ssg83
+S"(self=<lazyT ' added a new %(event_to)s'>)"
+p182
+sg85
+S'xml'
+p183
+sa(dp184
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py'
+p185
+sg64
+(dp186
+S'self.T.translate'
+p187
+S'<bound method translator.translate of <gluon.languages.translator object>>'
+p188
+sS'self.s'
+p189
+S"<Row {'event_link_to': '4/sdfdsa', 'event_text':... 'modified_by': 1, 'nickname': 'pyner', 'id': 5}>"
+p190
+sS'self'
+p191
+S"<lazyT ' added a new %(event_to)s'>"
+p192
+sS'self.T'
+p193
+S'<gluon.languages.translator object>'
+p194
+sS'self.m'
+p195
+S"' added a new %(event_to)s'"
+p196
+ssg70
+I369
+sg71
+(dp197
+I364
+S'    def __repr__(self):'
+p198
+sI365
+S'        return "<lazyT %s>" % (repr(Utf8(self.m)), )'
+p199
+sI366
+S''
+sI367
+S'    def __str__(self):'
+p200
+sI368
+S'        return str(self.T.apply_filter(self.m, self.s, self.f, self.t) if self.M else'
+p201
+sI369
+S'                   self.T.translate(self.m, self.s))'
+p202
+sI370
+S''
+sI371
+S'    def __eq__(self, other):'
+p203
+sI372
+S'        return str(self) == str(other)'
+p204
+sI373
+S''
+ssg83
+S"(self=<lazyT ' added a new %(event_to)s'>)"
+p205
+sg85
+g26
+sa(dp206
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py'
+p207
+sg64
+(dp208
+S'symbols'
+p209
+S'("<Row \\x1e\'event_link_to\': \'4/sdfdsa\', \'event_text\':... \'modified_by\': 1, \'nickname\': \'pyner\', \'id\': 5\\x1f>",)'
+p210
+sS'message'
+p211
+S"'a\\xc3\\xb1adido un nuevo %(event_to)s'"
+p212
+sS'self.params_substitution'
+p213
+S'<bound method translator.params_substitution of <gluon.languages.translator object>>'
+p214
+sS'self'
+p215
+S'<gluon.languages.translator object>'
+p216
+ssg70
+I886
+sg71
+(dp217
+I881
+S'                    symbols = (symbols,)'
+p218
+sI882
+S'                symbols = tuple('
+p219
+sI883
+S'                    value if isinstance(value, NUMBERS)'
+p220
+sI884
+S'                    else str(value).translate(ttab_in)'
+p221
+sI885
+S'                    for value in symbols)'
+p222
+sI886
+S'            message = self.params_substitution(message, symbols)'
+p223
+sI887
+S'        return message.translate(ttab_out)'
+p224
+sI888
+S''
+sI889
+S''
+sI890
+S'def findT(path, language=DEFAULT_LANGUAGE):'
+p225
+ssg83
+S'(self=<gluon.languages.translator object>, message=\'a\\xc3\\xb1adido un nuevo %(event_to)s\', symbols=("<Row \\x1e\'event_link_to\': \'4/sdfdsa\', \'event_text\':... \'modified_by\': 1, \'nickname\': \'pyner\', \'id\': 5\\x1f>",))'
+p226
+sg85
+S'translate'
+p227
+sa(dp228
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py'
+p229
+sg64
+(dp230
+S'symbols'
+p231
+S'("<Row \\x1e\'event_link_to\': \'4/sdfdsa\', \'event_text\':... \'modified_by\': 1, \'nickname\': \'pyner\', \'id\': 5\\x1f>",)'
+p232
+sS'message'
+p233
+S"'a\\xc3\\xb1adido un nuevo %(event_to)s'"
+p234
+ssg70
+I863
+sg71
+(dp235
+I864
+S'        message = regex_plural.sub(sub_plural, message)'
+p236
+sI865
+S'        return message'
+p237
+sI866
+S''
+sI867
+S'    def translate(self, message, symbols):'
+p238
+sI858
+S'            if part == s:'
+p239
+sI859
+S'                part = regex_plural_dict.sub(sub_dict, s)'
+p240
+sI860
+S'                if part == s:'
+p241
+sI861
+S'                    return m.group(0)'
+p242
+sI862
+S'            return part'
+p243
+sI863
+S'        message = message % symbols'
+p244
+ssg83
+S'(self=<gluon.languages.translator object>, message=\'a\\xc3\\xb1adido un nuevo %(event_to)s\', symbols=("<Row \\x1e\'event_link_to\': \'4/sdfdsa\', \'event_text\':... \'modified_by\': 1, \'nickname\': \'pyner\', \'id\': 5\\x1f>",))'
+p245
+sg85
+S'params_substitution'
+p246
+sasS'pyver'
+p247
+S'Python 2.7.3: /usr/bin/python (prefix: /usr)'
+p248
+sS'session'
+p249
+g57
+(S's\x96\x00\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">cart</td><td valign="top">:</td><td><div><table></table></div></td></tr></table></div>'
+tRp250
+sS'etype'
+p251
+S"<type 'exceptions.TypeError'>"
+p252
+sS'date'
+p253
+S'Sun Feb 17 10:01:56 2013'
+p254
+sS'response'
+p255
+g57
+(S's<\x17\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0xb007e140&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_foxter</td><td valign="top">:</td><td><div>127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">delimiters</td><td valign="top">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">files</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">flash</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">generic_patterns</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">headers</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">X-Powered-By</td><td valign="top">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">menu</td><td valign="top">:</td><td><div><table><tr><td><div><table><tr><td><div>Login</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/foxter/person/account.load/login</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Join</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/foxter/person/account.load/register</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>GitHub</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://github.com/rochacbruno/Movuca</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">meta</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">description</td><td valign="top">:</td><td><div>Culin\xc3\xa1ria vegetariana para todos!</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">og_images</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">og_type</td><td valign="top">:</td><td><div>website</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">og_url</td><td valign="top">:</td><td><div>http://www.menuvegano.com.br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">title</td><td valign="top">:</td><td><div>Pyner&#x27;s l\xc3\xadnea de tiempo | Foxter</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">models_to_run</td><td valign="top">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^person/\\w+\\.py$</div></td></tr><tr><td><div>^person/usertimeline/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">postprocessing</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_cookie_expires</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_data_name</td><td valign="top">:</td><td><div>session_data_foxter</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_file</td><td valign="top">:</td><td><div>&lt;open file &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/sessions/127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586&#x27;, mode &#x27;rb+&#x27; at 0xaff1c650&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_filename</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/sessions/127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id</td><td valign="top">:</td><td><div>127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_name</td><td valign="top">:</td><td><div>session_id_foxter</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_locked</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_new</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_storage_type</td><td valign="top">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">status</td><td valign="top">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">view</td><td valign="top">:</td><td><div>bootstrap/app/person/usertimeline.load</div></td></tr></table></div>'
+tRp256
+sS'locals'
+p257
+(dp258
+S'symbols'
+p259
+S'("<Row \\x1e\'event_link_to\': \'4/sdfdsa\', \'event_text\':... \'modified_by\': 1, \'nickname\': \'pyner\', \'id\': 5\\x1f>",)'
+p260
+sS'message'
+p261
+S"'a\\xc3\\xb1adido un nuevo %(event_to)s'"
+p262
+sS'sub_plural'
+p263
+S'<function sub_plural>'
+p264
+sS'self'
+p265
+S'<gluon.languages.translator object>'
+p266
+sssS'traceback'
+p267
+S'Traceback (most recent call last):\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/restricted.py", line 212, in restricted\n    exec ccode in environment\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/views/bootstrap/app/person/usertimeline.load", line 62, in <module>\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/views/bootstrap/app/person/usertimeline.load", line 17, in eventbox\n    {{for event in events:}}\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/globals.py", line 202, in write\n    self.body.write(xmlescape(data))\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/html.py", line 120, in xmlescape\n    return data.xml()\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py", line 409, in xml\n    return str(self) if self.M else escape(str(self))\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py", line 369, in __str__\n    self.T.translate(self.m, self.s))\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py", line 886, in translate\n    message = self.params_substitution(message, symbols)\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/languages.py", line 863, in params_substitution\n    message = message % symbols\nTypeError: format requires a mapping\n'
+p268
+s.

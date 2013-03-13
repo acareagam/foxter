@@ -1,0 +1,3 @@
+# -*- coding: utf-8 -*-
+
+CLIENT_ID, CLIENT_SECRET = ('133622423420992', '6b0880726a21a89dfcb07c19c7807817')

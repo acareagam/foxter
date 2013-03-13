@@ -1,0 +1,517 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.ValueError'> invalid literal for int() with base 10: 'None'"
+p3
+sS'layer'
+p4
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/controllers/article.py'
+p5
+sS'code'
+p6
+S'#!/usr/bin/python\n# -*- coding: utf-8 -*-\nfrom handlers.article import Article\n\n\ndef show():\n    article = Article(\'show\')\n    article.context.left_sidebar_enabled = True\n    article.context.leftlogo_enabled = True\n    return article.render("app/article/show/%s" % article.context.article.content_type_id.viewname)\n\ndef prn():\n    article = Article(\'show\')\n    article.context.left_sidebar_enabled = True\n    return article.render("app/article/print/%s" % article.context.article.content_type_id.viewname)\n\n\ndef edit():\n    article = Article(\'edit\')\n    return article.render("app/article/edit/%s" % article.context.article.content_type_id.viewname)\n\n\ndef new():\n    article = Article(\'new\')\n    #article.context.right_sidebar_enabled = True\n    return article.render("app/article/new/%s" % article.context.viewname)\n\n\ndef delete():\n    article = Article(\'delete\')\n    article.context.left_sidebar_enabled = True\n    article.context.leftlogo_enabled = True\n    return article.render("app/article/delete")\n\n\ndef list():\n    article = Article(\'list\')\n    article.context.left_sidebar_enabled = True\n    article.context.leftlogo_enabled = True\n    return article.render("app/article/list")\n\n\ndef search():\n    article = Article(\'search\')\n    article.context.left_sidebar_enabled = True\n    article.context.leftlogo_enabled = True\n    return article.render("app/article/search")\n\n\ndef favorite():\n    article = Article(\'favorite\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef like():\n    article = Article(\'like\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef dislike():\n    article = Article(\'dislike\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef subscribe():\n    article = Article(\'subscribe\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef unfavorite():\n    article = Article(\'unfavorite\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef unlike():\n    article = Article(\'unlike\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef unsubscribe():\n    article = Article(\'unsubscribe\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef undislike():\n    article = Article(\'undislike\')\n    if not article.context.error:\n        return article.action_links()\n    else:\n        return article.context.error\n\n\ndef showcomment():\n    article = Article(\'showcomment\')\n    article.context.left_sidebar_enabled = True\n    article.context.leftlogo_enabled = True\n    return article.render("app/article/showcomment")\n\n\ndef isanswer():\n    article = Article(\'isanswer\')\n    return article.render()\n\n\ndef isnotanswer():\n    article = Article(\'isnotanswer\')\n    return article.render()\n\n\ndef editcomment():\n    article = Article(\'editcomment\')\n    return \'\'\n\n\ndef removecomment():\n    article = Article(\'removecomment\')\n    return \'\'\n\n\ndef addreply():\n    article = Article("addreply")\n    return article.context.replies\n\n\ndef removereply():\n    article = Article(\'removereply\')\n    return \'\'\n\ndef removeevent():\n    return "alert(\'ok\')"\n\n\ndef votecomment():\n    article = Article(\'vote_comment\')\n    return article.context.voted\n\n\ndef book():\n    pass\n\n\ndef tag():\n    article = Article(\'tag\')\n    return article.render("app/article/tag")\n\n\ndef category():\n    article = Article(\'category\')\n    return article.render("app/article/category")\n\n\ndef tagcloud():\n    article = Article(\'tagcloud\')\n    return article.render("app/article/tagcloud")\n\nresponse._vars=response._caller(list)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.ValueError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.ValueError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.ValueError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.ValueError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.ValueError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.ValueError object>'
+p23
+sS'__reduce__'
+p24
+S'<built-in method __reduce__ of exceptions.ValueError object>'
+p25
+sS'__str__'
+p26
+S"<method-wrapper '__str__' of exceptions.ValueError object>"
+p27
+sS'__format__'
+p28
+S'<built-in method __format__ of exceptions.ValueError object>'
+p29
+sS'__getattribute__'
+p30
+S"<method-wrapper '__getattribute__' of exceptions.ValueError object>"
+p31
+sS'__class__'
+p32
+S"<type 'exceptions.ValueError'>"
+p33
+sS'__unicode__'
+p34
+S'<built-in method __unicode__ of exceptions.ValueError object>'
+p35
+sS'__delattr__'
+p36
+S"<method-wrapper '__delattr__' of exceptions.ValueError object>"
+p37
+sS'__subclasshook__'
+p38
+S'<built-in method __subclasshook__ of type object>'
+p39
+sS'__repr__'
+p40
+S"<method-wrapper '__repr__' of exceptions.ValueError object>"
+p41
+sS'args'
+p42
+S'("invalid literal for int() with base 10: \'None\'",)'
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.ValueError object>'
+p47
+sS'__doc__'
+p48
+S"'Inappropriate argument value (of correct type).'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.ValueError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"invalid literal for int() with base 10: 'None'"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\xf2b\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">ajax</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">application</td><td valign="top">:</td><td><div>foxter</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0xafe4a580&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cid</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">client</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">controller</td><td valign="top">:</td><td><div>article</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_admin</td><td valign="top">:</td><td><div>127.0.0.1-90453bb1-9172-4e19-bb55-22a008e1cd81<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_appli</td><td valign="top">:</td><td><div>127.0.0.1-43f0f72b-a4db-4562-8ec7-fb0a1116d146<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_foxter</td><td valign="top">:</td><td><div>127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_welcome</td><td valign="top">:</td><td><div>127.0.0.1-3908c525-5227-4ffa-a9b8-60983d7c49f1<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uechat_mode_10714</td><td valign="top">:</td><td><div>0<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">env</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/welcome/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/admin/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x897ba8c: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;python-HP-Pavilion-dm1-Notebook-PC&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;import_models&#x27;: False, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;admin&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;minthreads&#x27;: None, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_charset</td><td valign="top">:</td><td><div>ISO-8859-1,utf-8;q=0.7,*;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_encoding</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_accept_language</td><td valign="top">:</td><td><div>es-419,es;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_connection</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_cookie</td><td valign="top">:</td><td><div>session_id_appli=127.0.0.1-43f0f72b-a4db-4562-8ec7-fb0a1116d146; session_id_welcome=127.0.0.1-3908c525-5227-4ffa-a9b8-60983d7c49f1; session_id_admin=127.0.0.1-90453bb1-9172-4e19-bb55-22a008e1cd81; uechat_mode_10714=0; session_id_foxter=127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_host</td><td valign="top">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_referer</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/foxter/person/show/pyner</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">http_user_agent</td><td valign="top">:</td><td><div>Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu Chromium/24.0.1312.56 Chrome/24.0.1312.56 Safari/537.17</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path_info</td><td valign="top">:</td><td><div>/foxter/article/list</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">query_string</td><td valign="top">:</td><td><div>author=1&amp;limitby=None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_addr</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">remote_port</td><td valign="top">:</td><td><div>57426</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_method</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">request_uri</td><td valign="top">:</td><td><div>/foxter/article/list?author=1&amp;limitby=None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">script_name</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_name</td><td valign="top">:</td><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_port</td><td valign="top">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_protocol</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">server_software</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_path</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div><table><tr><td><div>2</div></td></tr><tr><td><div>4</div></td></tr><tr><td><div>1</div></td></tr><tr><td><div>alpha.2</div></td></tr><tr><td><div>datetime.datetime(2013, 2, 15, 10, 50, 49)</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0xb74b50d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x893d29c&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_input</td><td valign="top">:</td><td><div>&lt;socket._fileobject object at 0xb011fa6c&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi_version</td><td valign="top">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">extension</td><td valign="top">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">folder</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">function</td><td valign="top">:</td><td><div>list</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">get_vars</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">author</td><td valign="top">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">limitby</td><td valign="top">:</td><td><div>None</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">global_settings</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">app_folders</td><td valign="top">:</td><td><div>set([&#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/welcome/&#x27;, &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/admin/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">applications_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_args</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cmd_options</td><td valign="top">:</td><td><div>&lt;Values at 0x897ba8c: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;python-HP-Pavilion-dm1-Notebook-PC&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;import_models&#x27;: False, &#x27;winservice&#x27;: &#x27;&#x27;, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;profiler_filename&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;scheduler_groups&#x27;: None, &#x27;password&#x27;: &#x27;admin&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;interfaces&#x27;: None, &#x27;minthreads&#x27;: None, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">db_sessions</td><td valign="top">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">debugging</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">gluon_parent</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_jython</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_pypy</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">local_hosts</td><td valign="top">:</td><td><div><table><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr><tr><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">web2py_version</td><td valign="top">:</td><td><div><table><tr><td><div>2</div></td></tr><tr><td><div>4</div></td></tr><tr><td><div>1</div></td></tr><tr><td><div>alpha.2</div></td></tr><tr><td><div>datetime.datetime(2013, 2, 15, 10, 50, 49)</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_https</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_local</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">is_restful</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">now</td><td valign="top">:</td><td><div>datetime.datetime(2013, 2, 17, 10, 2, 3, 226326)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">post_vars</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_args</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">raw_extension</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">url</td><td valign="top">:</td><td><div>/foxter/article/list</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">utcnow</td><td valign="top">:</td><td><div>datetime.datetime(2013, 2, 17, 15, 2, 3, 226386)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">uuid</td><td valign="top">:</td><td><div>foxter/127.0.0.1.2013-02-17.10-02-03.d8248558-8bb3-4aa3-b658-1def25c63f43</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">vars</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">author</td><td valign="top">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">limitby</td><td valign="top">:</td><td><div>None</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">environ</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT</td><td valign="top">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_CHARSET</td><td valign="top">:</td><td><div>ISO-8859-1,utf-8;q=0.7,*;q=0.3</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_ENCODING</td><td valign="top">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_ACCEPT_LANGUAGE</td><td valign="top">:</td><td><div>es-419,es;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_CONNECTION</td><td valign="top">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_COOKIE</td><td valign="top">:</td><td><div>session_id_appli=127.0.0.1-43f0f72b-a4db-4562-8ec7-fb0a1116d146; session_id_welcome=127.0.0.1-3908c525-5227-4ffa-a9b8-60983d7c49f1; session_id_admin=127.0.0.1-90453bb1-9172-4e19-bb55-22a008e1cd81; uechat_mode_10714=0; session_id_foxter=127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_HOST</td><td valign="top">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_REFERER</td><td valign="top">:</td><td><div>http://127.0.0.1:8000/foxter/person/show/pyner</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">HTTP_USER_AGENT</td><td valign="top">:</td><td><div>Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu Chromium/24.0.1312.56 Chrome/24.0.1312.56 Safari/537.17</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">PATH_INFO</td><td valign="top">:</td><td><div>/foxter/article/list</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">QUERY_STRING</td><td valign="top">:</td><td><div>author=1&amp;limitby=None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_ADDR</td><td valign="top">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REMOTE_PORT</td><td valign="top">:</td><td><div>57426</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_METHOD</td><td valign="top">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">REQUEST_URI</td><td valign="top">:</td><td><div>/foxter/article/list?author=1&amp;limitby=None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SCRIPT_NAME</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_NAME</td><td valign="top">:</td><td><div>python-HP-Pavilion-dm1-Notebook-PC</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PORT</td><td valign="top">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_PROTOCOL</td><td valign="top">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">SERVER_SOFTWARE</td><td valign="top">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.errors</td><td valign="top">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0xb74b50d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.file_wrapper</td><td valign="top">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x893d29c&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.input</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0xafe4a580&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multiprocess</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.multithread</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.run_once</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.url_scheme</td><td valign="top">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">wsgi.version</td><td valign="top">:</td><td><div>1</div></td></tr></table></div></td></tr></table></div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'Article': <class 'applications.foxter.modules.handlers.article.Article'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, 'CAT': <class 'gluon.html.CAT'>, 'CENTER': <class 'gluon.html.CENTER'>, 'CLEANUP': <class 'gluon.validators.CLEANUP'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0xafd364e8, file "/home...lications/foxter/controllers/article.py", line 3>'
+p69
+ssS'lnum'
+p70
+I212
+sS'lines'
+p71
+(dp72
+I207
+S'    try:'
+p73
+sI208
+S'        if isinstance(code, types.CodeType):'
+p74
+sI209
+S'            ccode = code'
+p75
+sI210
+S'        else:'
+p76
+sI211
+S'            ccode = compile2(code, layer)'
+p77
+sI212
+S'        exec ccode in environment'
+p78
+sI213
+S'    except HTTP:'
+p79
+sI214
+S'        raise'
+p80
+sI215
+S'    except RestrictedError:'
+p81
+sI216
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p82
+ssS'call'
+p83
+S'(code=\'#!/usr/bin/python\\n# -*- coding: utf-8 -*-\\nfrom h...agcloud")\\n\\nresponse._vars=response._caller(list)\\n\', environment={\'A\': <class \'gluon.html.A\'>, \'Article\': <class \'applications.foxter.modules.handlers.article.Article\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, \'CENTER\': <class \'gluon.html.CENTER\'>, \'CLEANUP\': <class \'gluon.validators.CLEANUP\'>, ...}, layer=\'/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/controllers/article.py\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/controllers/article.py'
+p88
+sg64
+(dp89
+sg70
+I177
+sg71
+(dp90
+I166
+S''
+sI167
+S''
+sI168
+S'def category():'
+p91
+sI169
+S"    article = Article('category')"
+p92
+sI170
+S'    return article.render("app/article/category")'
+p93
+sI171
+S''
+sI172
+S''
+sI173
+S'def tagcloud():'
+p94
+sI174
+S"    article = Article('tagcloud')"
+p95
+sI175
+S'    return article.render("app/article/tagcloud")'
+p96
+ssg83
+S'()'
+p97
+sg85
+S'<module>'
+p98
+sa(dp99
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/globals.py'
+p100
+sg64
+(dp101
+S'self'
+p102
+S'undefined'
+p103
+sS'f'
+S'<function list>'
+p104
+ssg70
+I193
+sg71
+(dp105
+I192
+S'        self._vars = None'
+p106
+sI193
+S'        self._caller = lambda f: f()'
+p107
+sI194
+S'        self._view_environment = None'
+p108
+sI195
+S'        self._custom_commit = None'
+p109
+sI196
+S'        self._custom_rollback = None'
+p110
+sI197
+S''
+sI188
+S'        self.menu = []             # used by the default view layout'
+p111
+sI189
+S'        self.files = []            # used by web2py_ajax.html'
+p112
+sI190
+S'        self.generic_patterns = []  # patterns to allow generic views'
+p113
+sI191
+S"        self.delimiters = ('{{', '}}')"
+p114
+ssg83
+S'(f=<function list>)'
+p115
+sg85
+S'<lambda>'
+p116
+sa(dp117
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/controllers/article.py'
+p118
+sg64
+(dp119
+S'article'
+p120
+g103
+sS'global Article'
+p121
+S"<class 'applications.foxter.modules.handlers.article.Article'>"
+p122
+ssg70
+I37
+sg71
+(dp123
+I32
+S'    article.context.leftlogo_enabled = True'
+p124
+sI33
+S'    return article.render("app/article/delete")'
+p125
+sI34
+S''
+sI35
+S''
+sI36
+S'def list():'
+p126
+sI37
+S"    article = Article('list')"
+p127
+sI38
+S'    article.context.left_sidebar_enabled = True'
+p128
+sI39
+S'    article.context.leftlogo_enabled = True'
+p129
+sI40
+S'    return article.render("app/article/list")'
+p130
+sI41
+S''
+ssg83
+S'()'
+p131
+sg85
+S'list'
+p132
+sa(dp133
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/modules/handlers/base.py'
+p134
+sg64
+(dp135
+S'hook'
+p136
+S"'list'"
+p137
+sS'self'
+p138
+S'<applications.foxter.modules.handlers.article.Article object>'
+p139
+sS'self.__getattribute__'
+p140
+S"<method-wrapper '__getattribute__' of Article object>"
+p141
+ssg70
+I41
+sg71
+(dp142
+I36
+S'        # aditional hooks'
+p143
+sI37
+S'        if not isinstance(hooks, list):'
+p144
+sI38
+S'            hooks = [hooks]'
+p145
+sI39
+S''
+sI40
+S'        for hook in hooks:'
+p146
+sI41
+S'            self.__getattribute__(hook)()'
+p147
+sI42
+S''
+sI43
+S'    def allowed_content_types(self):'
+p148
+sI44
+S'        if self.db.auth:'
+p149
+sI45
+S'            allowed_types = self.db.auth.user_groups.values()'
+p150
+ssg83
+S"(self=<applications.foxter.modules.handlers.article.Article object>, hooks=['list'], theme='%(name)s/', view='app/generic', meta=None, context=None)"
+p151
+sg85
+g50
+sa(dp152
+g62
+S'/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/modules/handlers/article.py'
+p153
+sg64
+(dp154
+S'self.request.vars.limitby'
+p155
+S"'None'"
+p156
+sS'self.request.vars'
+p157
+S"<Storage {'limitby': 'None', 'author': '1'}>"
+p158
+sS'self'
+p159
+S'<applications.foxter.modules.handlers.article.Article object>'
+p160
+sS'self.request'
+p161
+S"<Storage {'function': 'list', 'body': <cStringIO...pplications/foxter/', 'post_vars': <Storage {}>}>"
+p162
+sS'limitby'
+p163
+S'(0, 10)'
+p164
+sS'self.request.vars.limitby.split'
+p165
+S'<built-in method split of str object>'
+p166
+sS'item'
+p167
+S"'None'"
+p168
+sS'builtinint'
+p169
+S"<type 'int'>"
+p170
+ssg70
+I919
+sg71
+(dp171
+I914
+S'        self.context.paginator.records = self.context.totalrecords = self.db(query).count()'
+p172
+sI915
+S'        self.context.paginate_info = PaginateInfo(self.context.paginator.page, self.context.paginator.paginate, self.context.paginator.records)'
+p173
+sI916
+S'        limitby = self.context.paginator.limitby()'
+p174
+sI917
+S'        #### /pagination'
+p175
+sI918
+S'        if self.request.vars.limitby:'
+p176
+sI919
+S"            limitby = [int(item) for item in self.request.vars.limitby.split(',')]"
+p177
+sI920
+S''
+sI921
+S"        orderby = ~self.db.Article.publish_date if not 'popular' in self.request.vars else ~self.db.Article.views | ~self.db.Article.likes"
+p178
+sI922
+S''
+sI923
+S'        self.context.articles = self.db(query).select(limitby=limitby, orderby=orderby)'
+p179
+ssg83
+S'(self=<applications.foxter.modules.handlers.article.Article object>)'
+p180
+sg85
+g132
+sasS'pyver'
+p181
+S'Python 2.7.3: /usr/bin/python (prefix: /usr)'
+p182
+sS'session'
+p183
+g57
+(S's\x96\x00\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">cart</td><td valign="top">:</td><td><div><table></table></div></td></tr></table></div>'
+tRp184
+sS'etype'
+p185
+S"<type 'exceptions.ValueError'>"
+p186
+sS'date'
+p187
+S'Sun Feb 17 10:02:03 2013'
+p188
+sS'response'
+p189
+g57
+(S's\xaf\x17\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top">body</td><td valign="top">:</td><td><div>&lt;cStringIO.StringO object at 0xb00b48e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">cookies</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">session_id_foxter</td><td valign="top">:</td><td><div>127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586<table><tr><td style="font-weight:bold;vertical-align:top">comment</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">domain</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">expires</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">httponly</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">max-age</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">path</td><td valign="top">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">secure</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">version</td><td valign="top">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">delimiters</td><td valign="top">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">files</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">flash</td><td valign="top">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">generic_patterns</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">headers</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">X-Powered-By</td><td valign="top">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">menu</td><td valign="top">:</td><td><div><table><tr><td><div><table><tr><td><div>Login</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/foxter/person/account/login</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>Join</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>/foxter/person/account/register</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr><tr><td><div><table><tr><td><div>GitHub</div></td></tr><tr><td><div>False</div></td></tr><tr><td><div>http://github.com/rochacbruno/Movuca</div></td></tr><tr><td><div><table></table></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">meta</td><td valign="top">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top">description</td><td valign="top">:</td><td><div>Free Social CMS Engine built with web2py and Python by blouweb.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">keywords</td><td valign="top">:</td><td><div>web2py, python, cms, social network, CMS</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">og_images</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">og_type</td><td valign="top">:</td><td><div>website</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">og_url</td><td valign="top">:</td><td><div>http://www.menuvegano.com.br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">title</td><td valign="top">:</td><td><div>Foxter</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">models_to_run</td><td valign="top">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^article/\\w+\\.py$</div></td></tr><tr><td><div>^article/list/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">postprocessing</td><td valign="top">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_cookie_expires</td><td valign="top">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_data_name</td><td valign="top">:</td><td><div>session_data_foxter</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_file</td><td valign="top">:</td><td><div>&lt;open file &#x27;/home/python/P\\xc3\\xbablico/web2py/web2py-master/applications/foxter/sessions/127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586&#x27;, mode &#x27;rb+&#x27; at 0x89cc650&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_filename</td><td valign="top">:</td><td><div>/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/sessions/127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id</td><td valign="top">:</td><td><div>127.0.0.1-13fb8882-27dc-4b85-af8b-03fec4a16586</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_id_name</td><td valign="top">:</td><td><div>session_id_foxter</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_locked</td><td valign="top">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_new</td><td valign="top">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">session_storage_type</td><td valign="top">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">status</td><td valign="top">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top">view</td><td valign="top">:</td><td><div>article/list.html</div></td></tr></table></div>'
+tRp190
+sS'locals'
+p191
+(dp192
+S'field'
+p193
+S"'author'"
+p194
+sS'self'
+p195
+S'<applications.foxter.modules.handlers.article.Article object>'
+p196
+sS'limitby'
+p197
+S'(0, 10)'
+p198
+sS'value'
+p199
+S"'1'"
+p200
+sS'item'
+p201
+S"'None'"
+p202
+sS'denied_fields'
+p203
+S"['limitby', 'orderby', 'tag', 'category', 'or', 'page', 'paginate', 'draft', 'favorite', 'like', 'dislike', 'subscribe', 'comment', 'thrash', 'sq', 'popular', 'unsearchable', 'unlistable']"
+p204
+sS'queries'
+p205
+S"[<Query (article.author = 1)>, <Query (article.draft = 'F')>, <Query (article.is_active = 'T')>, <Query (article.content_type_id IN (1))>]"
+p206
+sS'query'
+p207
+S"<Query ((((article.author = 1) AND (article.draf...ve = 'T')) AND (article.content_type_id IN (1)))>"
+p208
+sS'action_tables'
+p209
+S"{'dislike': <Table article_dislikers (id,article_id,user_id,...e,created_on,created_by,modified_on,modified_by)>, 'favorite': <Table article_favoriters (id,article_id,user_id...e,created_on,created_by,modified_on,modified_by)>, 'like': <Table article_likers (id,article_id,user_id,is_...e,created_on,created_by,modified_on,modified_by)>, 'subscribe': <Table article_subscribers (id,article_id,user_i...e,created_on,created_by,modified_on,modified_by)>}"
+p210
+sssS'traceback'
+p211
+S'Traceback (most recent call last):\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/restricted.py", line 212, in restricted\n    exec ccode in environment\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/controllers/article.py", line 177, in <module>\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/gluon/globals.py", line 193, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/python/P\xc3\xbablico/web2py/web2py-master/applications/foxter/controllers/article.py", line 37, in list\n    article = Article(\'list\')\n  File "applications/foxter/modules/handlers/base.py", line 41, in __init__\n    self.__getattribute__(hook)()\n  File "applications/foxter/modules/handlers/article.py", line 919, in list\n    limitby = [int(item) for item in self.request.vars.limitby.split(\',\')]\nValueError: invalid literal for int() with base 10: \'None\'\n'
+p212
+s.

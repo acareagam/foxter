@@ -1,0 +1,127 @@
+{{response.files.append(URL('static','basic/js/person_show.js'))}}
+{{extend "basic/app/layout.html"}}
+
+<div class="sixteen columns alert">
+    {{for alert in alerts:}}
+    <p>{{=alert}}</p>
+    {{pass}}
+</div>
+
+<div class="sixteen columns" id="contact-wrapper">
+
+    <div class="row person-main-info">
+        <div class="eleven columns alpha">
+            <div class="two columns alpha">
+                <img class="two columns" src="{{=get_image(None, 'user', themename='basic', user=user)}}">
+            </div>
+            <div class="nine columns omega">
+                <h3>{{=get_name_of(user)}}</h3>
+                <em>{{=user.city or ''}} {{=user.country or ''}}</em>  <a href="{{=user.website or ''}}" target="_blank">{{=user.website or ''}}</a>
+                <p>{{=user.tagline or ''}}</p>
+                <em  id="relation-text">{{=relation_text}}</em>
+            </div>
+            <div class="nine columns omega">
+                {{=buttons}}
+            </div>
+            <div class="nine columns omega">
+
+            {{if hiddenmail:}}
+                {{=A(IMG(_src=URL('static','basic/images/icons', args='arroba.png'), _alt="Email"), _target="_blank", _title="Email me",
+                _href=hiddenmail, _onclick="window.open('%s', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" % hiddenmail)}}
+            {{else:}}
+               {{if relation in ['contacts', 'following', 'yourself']:}}
+                  {{=A(IMG(_src=URL('static','basic/images/icons', args='arroba.png'), _alt="Email"), _target="_blank", _title="Email me",
+                  _href="mailto:%(email)s" % user)}}
+               {{pass}}
+            {{pass}}
+            {{=A(IMG(_src=URL('static','basic/images/icons', args='facebook.png'), _alt="facebook"), _target="_blank", _title="facebook", _href="http://facebook.com/%s" % user.facebook.split('/')[-1].strip()) if user.facebook else ''}}
+            {{=A(IMG(_src=URL('static','basic/images/icons', args='twitter.png'), _alt="twitter"), _target="_blank", _title="twitter",_href="http://twitter.com/%s" % twittername) if twittername else ''}}
+            {{=CAT(*[A(IMG(_src=item['img'], _alt="Google+"), _target="_blank", _title=item['title'], _href=item['link']) for item in extra_links])}}
+            </div>
+        </div>
+
+        <div class="five columns omega">
+            {{=resume}}
+            {{include 'basic/app/share_buttons.html'}}
+            <ul class="person-resume">
+                <li>
+                    <img style="margin:4px;margin-right:15px;" src="http://static.addtoany.com/buttons/favicon.png" width="16" height="16" border="0" alt="Share"/>
+                    {{share(classes="columns omega", like=False, tweet=False, onlyshare=True, text="Share this profile")}}
+                </li>
+            </ul>
+        </div>   
+    </div>
+
+    <div class="row person-data">
+        <div class="eight columns alpha">
+            {{if user.about:}}
+            <div class="person-about person-box">
+                <h4><img src="{{=URL('static','%s/images/icons' % theme_name, args='help.24.png')}}" alt="{{=T('About')}}" title="{{=T('About')}}">{{=T("About")}}</h4>
+                {{=MARKMIN(user.about[:300] if user.about else '')}}
+            </div>
+            {{pass}}
+            <div class="person-articles person-box">
+                <h4><img src="{{=URL('static','%s/images/icons' % theme_name, args='attach_round.24.png')}}" alt="{{=T('Articles')}}" title="{{=T('Articles')}}">{{=T("Articles")}}</h4>
+                {{if relation == 'yourself':}}
+                    {{=A(T("Write a new article"), _href=CURL('article', 'new', args='Article'))}}
+                {{pass}}
+                {{=LOAD('article','list.load',vars=dict(author=user.id,limitby='0,3'), ajax=True)}}
+            </div>
+            <div class="person-timeline person-box">
+                <h4><img src="{{=URL('static','%s/images/icons' % theme_name, args='monitor.24.png')}}" alt="{{=T('Activities')}}" title="{{=T('Activities')}}">{{=T("Activities")}}</h4>
+                {{=LOAD('person','usertimeline.load',args=user.id ,vars=dict(limitby='0,5'), ajax=True)}}
+            </div>           
+        </div>
+        <div class="eight columns omega">
+            <div class="person-board person-box">
+                <h4><img src="{{=URL('static','%s/images/icons' % theme_name, args='board.24.png')}}" alt="{{=T('Board')}}" title="{{=T('Board')}}">{{=T("Board")}}</h4>
+                 {{=LOAD('person','board.load',args=user.id ,vars=dict(limitby='0,4'), ajax=True)}}
+            </div>
+        </div>
+        {{if twittername:}}
+        <div class="eight columns omega">
+            <div class="person-twitter person-box">
+                <h4><img src="{{=URL('static','%s/images/icons' % theme_name, args='sound.24.png')}}" alt="{{=T('Board')}}" title="{{=T('Board')}}">{{=T("Twitter")}}
+                   <a href="https://twitter.com/{{=twittername}}" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @{{=twittername}}</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </h4>
+                 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+                <script>
+                new TWTR.Widget({
+                  version: 2,
+                  type: 'profile',
+                  rpp: 10,
+                  interval: 15000,
+                  width: 'auto',
+                  height: 100,
+                  theme: {
+                    shell: {
+                      background: 'transparent',
+                      color: '#000000'
+                    },
+                    tweets: {
+                      background: 'transparent',
+                      color: '#000000',
+                      links: '#1137f2'
+                    }
+                  },
+                  features: {
+                    scrollbar: false,
+                    loop: true,
+                    live: true,
+                    behavior: 'default'
+                  }
+                }).render().setUser('{{=twittername}}').start();
+                </script>
+            </div>
+        </div>
+        {{pass}}
+        <div class="eight columns omega">
+            <div class="person-pictures person-box">
+                <h4><img src="{{=URL('static','%s/images/icons' % theme_name, args='pictures.24.png')}}" alt="{{=T('Pictures')}}" title="{{=T('Pictures')}}">{{=T("Pictures")}}</h4>
+                 
+            </div>
+        </div>
+    </div>
+   
+</div>

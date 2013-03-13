@@ -1,0 +1,27 @@
+
+  <div class="carousel slide thumbnail" id="myCarousel">
+  <div class="carousel-inner">
+    {{for i,article in enumerate(featured):}}
+    <div class="item {{='active' if i == 0 else ''}}">
+      <a href="{{=CURL('article', 'show', args=[article.id, article.slug])}}" >
+        
+        <script src='http://src.sencha.io/screen.js'></script>
+        <!--http://src.sencha.io/saw/sah/-->
+        <img alt="" style="min-height:290px;max-height:290px;" src="http://src.sencha.io/386/290/{{=get_image(article.medium_thumbnail or article.picture, article.content_type_id.identifier,host=True, scheme=True)}}" >
+
+      </a>
+      <div class="carousel-caption">
+          <!-- <img width="120" style="margin-left:-5px;float:left;margin-right:10px;" src="{{=URL('static', 'menu', args=['logodoido.png'])}}"> -->
+        <h4><a href="{{=CURL('article', 'show', args=[article.id, article.slug])}}" >{{=article.title}}</a></h4>
+        {{desc = article.description or ''}}
+        <p>{{=remove_tags(desc[:101])}}... <a href="{{=CURL('article', 'show', args=[article.id, article.slug])}}">{{=T("read more")}}</a>.</p>
+      </div>
+    </div>
+    {{pass}}
+  </div>
+  <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+  <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
+</div>
+
+
+{{'''style="max-height:400px;height:400px;width:100%;"'''}}

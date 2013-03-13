@@ -1,0 +1,12 @@
+{{include TIMELINEFUNCTIONS}}
+<ul class="timeline-wrapper" style="list-style: none;margin-left:0px;">
+ {{for event in events:}}
+    {{eventbox(event.user_timeline)}}
+    {{=IMG(_src=URL('static','menu', args='hr.png'))}}
+ {{pass}}
+</ul>
+{{if events:}}
+  <a class="btn pull-right" href="{{=CURL('person','publictimeline', extension=False,vars=dict())}}">{{=T("View all activities")}}</a>
+{{else:}}
+  {{=T("No events on this timeline")}}
+{{pass}}

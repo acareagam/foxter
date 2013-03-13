@@ -1,0 +1,230 @@
+{{response.files.append(URL('static','menu/js/home_index.js'))}}
+{{extend "menu/app/layout.html"}}
+
+{{block header}}
+ <div class="row-fluid hero-unit header" style="padding:0;padding-left:2px;padding-top:25px;">
+   <ul class="thumbnails" style="margin-left:10px;display:inline-block;margin-bottom:-55px;">
+        <li class="span7">
+          {{include "menu/app/featured_slider.html"}}
+        </li>
+        {{if block1:}}
+        <li class="span4" >
+          <a class="thumbnail" href="{{=CURL('article', 'show', args=[block1[0].id, block1[0].slug], extension=False)}}" title="{{=block1[0].title}}" data-content="{{=block1[0].description}}">
+            <div class="" style="width:210px;height:132px;overflow:hidden;">
+             {{=IMG(_src=get_image(block1[0].thumbnail, block1[0].content_type_id.identifier), _width=210, _height=132)}}
+            </div>
+  
+          </a>
+           <div style="background:black;opacity:0.65;color:#FFFFFF;font-weight:bold;position:relative;bottom:55px;margin:5px;height:36px;padding:5px;">
+             <a style="color:#FFFFFF;" href="{{=CURL('article', 'show', args=[block1[0].id, block1[0].slug], extension=False)}}" title="{{=block1[0].title}}">
+             {{=block1[0].title}}
+             </a>
+           </div>
+        </li>
+        {{pass}}
+        {{if block2:}}
+        <li class="span4" style="margin-top: -56px;">
+          <a class="thumbnail" href="{{=CURL('article', 'show', args=[block2[0].id, block2[0].slug], extension=False)}}" title="{{=block2[0].title}}" data-content="{{=block2[0].description}}">
+            <div class="captioned" style="width:210px;height:132px;overflow:hidden;">
+             {{=IMG(_src=get_image(block2[0].thumbnail, block2[0].content_type_id.identifier), _width=210, _height=132)}}
+            </div>
+          </a>
+            <div style="background:black;opacity:0.65;color:#FFFFFF;font-weight:bold;position:relative;bottom:55px;margin:5px;height:36px;padding:5px;">
+             <a style="color:#FFFFFF;" href="{{=CURL('article', 'show', args=[block2[0].id, block2[0].slug], extension=False)}}" title="{{=block2[0].title}}">
+             {{=block2[0].title}}
+             </a>
+           </div>
+        </li>
+        {{pass}}
+      </ul>
+</div>
+{{end}}
+
+ {{block left_sidebar}}
+     {{super}}
+     <div class="well featured-members" style="margin-top:20px;">
+     {{include "menu/app/featured_members.html"}}
+     <a class="btn pull-right" href="{{=CURL('person','search', vars={'q':'@'})}}">{{=T("View more")}}</a>
+     </div>
+      
+      <div class="well">
+      <h5 class="" style="margin-bottom:0px;padding-top:2px;padding-bottom:2px;">{{=T("Recent activities").upper()}}</h5>
+     {{=LOAD('person','publictimeline.load',args='sidebar' ,vars=dict(limitby='0,5'), ajax=True)}}
+     </div>
+     
+ {{end}}
+
+{{if session.auth and 1==2:}}
+  <h4 class="bottom-line">
+      <i class="icon-th-list"></i>
+      {{=T("Your Feed")}}
+  </h4>
+  {{=LOAD('person','privatetimeline.load' ,vars=dict(limitby='0,5'), ajax=True)}}
+  <br/>
+{{pass}}
+
+{{#=LOAD('article','list.populartop',vars=dict(limitby='0,3',popular="true"), ajax=True)}}
+{{=LOAD('article','list.populartop2',vars=dict(limitby='0,3',popular="true"), ajax=True)}}
+
+<!-- content tabs -->
+  <h5 class="bottom-line">
+      <i class="icon-list-alt"></i>
+      {{=T("Content")}}
+  </h5>
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="{{=CURL('article','list.load',vars=dict(limitby='0,7'))}}">{{=T("All")}}</a></li>
+      {{if 1==2 and not user_is("admin"):}}
+          {{content_types = content_types.as_list()}}
+           {{content_types.append({"id":3, "title":T("Product"), "identifier":T("Product")})}}
+      {{pass}}
+      {{for i, content_type in enumerate(content_types):}}
+          {{if i <= 1:}}
+          <li><a data-toggle="tab" href="{{=CURL('article','list.load', vars={'content_type_id':content_type['id'],'limitby':'0,7'})}}">{{=T(content_type['title'])}}</a></li>
+          {{pass}}
+      {{pass}}
+      {{if len(content_types) > 2:}}
+              
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      {{=T("More")}}
+                      <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    {{for i, content_type in enumerate(content_types):}}
+                         {{if i > 1:}}
+                             <li><a data-toggle="tab" href="{{=CURL('article','list.load', vars={'content_type_id':content_type['id'], 'limitby':'0,7'})}}">{{=T(content_type['title'])}}</a></li>
+                         {{pass}}
+                    {{pass}}
+ 
+                  </ul>
+              </li>
+      {{pass}}
+      <li>
+          <a class="noaction" data-toggle="tab" href="" onclick="return false;" style="padding:0;padding-top:3px;padding-bottom:3px;">
+               <input class="article-search" data-url="{{=CURL('article','list.load')}}" placeholder="{{=T('Search')}}" type="text" id="sq" name="sq" style="margin:0px;border:none;width:100px;color:#880000;border-radius:none;box-shadow:none;">
+          </a>
+      </li>
+    </ul> 
+    <script>
+    $(function () {
+      $('.tabs a:last').tab('show')
+
+      $('a[data-toggle="tab"]').on('show', function (e) {
+         if ($(e.target).hasClass("noaction")){
+          return false;
+         }
+         e.target; // activated tab
+         e.relatedTarget; // previous tab
+         url = $(e.target).attr("href");
+         web2py_ajax_page("GET", url, "", "content-placeholder")
+      })
+
+
+      $('.article-search').on('keyup', function (e) {
+        elem = $(".article-search");
+        sq = elem.val();
+        url = elem.attr("data-url");
+        web2py_ajax_page("GET", url + "?sq=" + sq + "&limitby=0,7" , "", "content-placeholder")
+      })
+
+
+    })
+    </script>
+    <style>
+    #content-placeholder{
+      margin-top: -15px;
+    }
+    </style>
+    {{#=LOAD('article','list.load',vars=dict(limitby='0,7'), ajax=True, target="content-placeholder")}}
+    <div id="content-placeholder">
+      {{include 'menu/app/article/list.load'}}
+    </div>  
+<!-- /content tabs -->
+
+{{block right_sidebar}}
+<h5>{{=T("Get in!").upper()}}</h5>
+  <div class="well participe">
+    <img width="25" style="margin-left:-15px;float:right;margin-right:10px;" src="{{=URL('static', 'menu', args=['images','kitchen','espatula.png'])}}">
+    
+    <p>
+      <a href="{{=CURL('article','new',args='CookRecipe')}}">
+           {{=XML(T("Send your recipe and help us to promote the <strong>veg</strong>etari<strong>anism!</strong>"))}}
+      </a>
+          </p> 
+  </div>
+
+
+
+          <div id="accordion2" class="accordion">
+            <h5>CATEGORIAS</h5>
+            {{for item in categories:}}
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapse{{=item['id']}}" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle" style="background:#FFF7DF;">
+                  {{=T(item['content_type'])}}s
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapse{{=item['id']}}" style="height: 0px;">
+                <div class="accordion-inner">
+                    
+                  <ul class="nav nav-list">
+                    {{for category in item['categories']:}}
+                        <li><a href="{{=CURL('article', 'list', vars=dict(category=category.name, content_type_id=item['id']))}}"><i class="i"></i> {{=T(category.name)}}</a></li>
+                    {{pass}}
+                     <li><a href="{{=CURL('article', 'list', vars=dict(content_type_id=item['id']))}}"><i class="i"></i> {{=T("View all")}}</a></li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+            {{pass}}
+
+
+          </div>
+
+
+  
+  {{if block3:}}
+   <ul class="thumbnails">
+        {{for i, b3item in enumerate(block3, 1):}}
+          {{if i < 3:}}
+          <li>
+            <a class="thumbnail captioned" href="{{=CURL('article', 'show', args=[b3item.id, b3item.slug], extension=False)}}" title="{{=b3item.title}}" data-content="{{=b3item.description}}">
+              <div class="" style="width:155px;overflow:hidden;">
+               {{=IMG(_src=get_image(b3item.thumbnail, b3item.content_type_id.identifier), _width=155)}}
+              </div>
+              <div class="caption" style="width:115px;overflow:hidden;">
+                <h5>{{=b3item.title}}</h5>
+              </div>
+            </a>
+          </li>
+          {{pass}}
+        {{pass}}
+      </ul>
+  {{pass}}
+
+  <div class=""></div>
+<div>
+  <form style="border:1px solid #ccc;padding:3px;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=menuvegano', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>
+      <h6 style="color:#000000;margin-bottom:3px;">{{=iicon('envelope')}}Cadastre seu e-mail</h6>
+      <small style="font-size:10px;color:gray;">receba até um e-mail por dia com as novidades do Menu!</small>
+    </p>
+    <p>
+      <input type="text" style="width:140px" name="email" placeholder="você@dominio.com" required='required'/>
+    </p>
+    <input type="hidden" value="menuvegano" name="uri"/>
+    <input type="hidden" name="loc" value="pt_BR"/>
+    <input type="submit" value="OK" class="btn" />
+  </form>
+</div>
+  {{#=LOAD('article','list.popular',vars=dict(limitby='0,4',popular="true"), ajax=True)}}
+
+  <div class=""></div>
+          <h4 class="bottom-line" style="clear:left;">
+      <i class="icon-tag"></i>
+      {{=T("Tags").upper()}}
+  </h4>
+    {{=LOAD('article','tagcloud.load', ajax=True)}}
+
+{{end}}

@@ -1,0 +1,45 @@
+ <script>
+
+ $(document).ready(function () {
+  $(".list-article-wrapper").click(function(){
+     window.location = $(this).attr("data-url");
+  });
+
+  $('.captioned2').popover({"placement": "top"});
+
+});
+
+</script>
+<style>
+.hover_gray {
+  margin-left:60px;
+  border: 1px solid transparent;
+}
+.hover_gray:hover {
+  
+  border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+</style>
+
+{{if articles:}}
+<h5>{{=T("POPULAR")}}</h5>
+<ul class="thumbnails">
+{{for article in articles:}}
+        <li >
+          <a class="thumbnail captioned2" href="{{=CURL('article', 'show', args=[article.id, article.slug], extension=False)}}" title="{{=article.title}}" data-content="{{=article.description}}">
+            <div class="" style="width:150px;height:100px;overflow:hidden;">
+             {{=IMG(_src=get_image(article.thumbnail, article.content_type_id.identifier), _width=150, _height=100)}}
+            </div>
+            <div class="caption" style="width:110px;min-height:36px;overflow:hidden;">
+              <h5>{{=article.title}}</h5>
+            </div>
+  
+          </a>
+        </li>
+{{pass}}
+</ul>
+
+{{pass}}
